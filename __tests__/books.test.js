@@ -12,7 +12,7 @@ describe('books routes', () => {
     pool.end();
   });
 
-  it.only('GET /books should return a list of books and their authors', async () => {
+  it('GET /books should return a list of books and their authors', async () => {
     const resp = await request(app).get('/books');
     expect(resp.status).toBe(200);
     expect(resp.body.length).toBe(2);
@@ -34,5 +34,30 @@ describe('books routes', () => {
     `);
   });
   it('GET /books/:id should return an individual book and their authors', async () => {
-    const resp = await request(app).get('/books/1')
+    const resp = await request(app).get('/books/1');
+    expect(resp.status).toBe(200);
+    expect(resp.body[0]).toMatchInlineSnapshot(`
+      Object {
+        "authors": Array [
+          Object {
+            "dob": "1989",
+            "first_name": "Moira",
+            "id": 1,
+            "last_name": "Rose",
+            "pob": "Springfield",
+          },
+          Object {
+            "dob": "1989",
+            "first_name": "Moira",
+            "id": 2,
+            "last_name": "Jude",
+            "pob": "Springfield",
+          },
+        ],
+        "id": "1",
+        "released": "1800",
+        "title": "Red Badge of Courage",
+      }
+    `);
+  });
 });
