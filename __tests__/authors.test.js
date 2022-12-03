@@ -16,7 +16,7 @@ describe('authors routes', () => {
   it('GET /authors should return the list of authors and their books', async () => {
     const resp = await request(app).get('/authors');
     expect(resp.status).toBe(200);
-    expect(resp.body.length).toBe(2);
+    expect(resp.body.length).toBe(3);
     expect(resp.body[0]).toEqual({
       id: expect.any(String),
       first_name: expect.any(String),

@@ -37,14 +37,16 @@ INSERT INTO authors (
 )
 VALUES 
 ('Moira', 'Rose', 1989, 'Springfield'),
-('Moira', 'Jude', 1989, 'Springfield');
+('Moira', 'Jude', 1989, 'Springfield'),
+('Cornejo', 'Andrew', 1989, 'Oceanside');
 
 INSERT INTO books (
     title,
     released)
 
     VALUES
-    ('Red Badge of Courage', '1800');
+    ('Red Badge of Courage', '1800'),
+    ('Call of the Wild', '1900');
 
 INSERT INTO authors_books (
     authors_id,
@@ -52,7 +54,8 @@ INSERT INTO authors_books (
 )
 VALUES 
 (1,1),
-(2,1)
+(2,1),
+(3,2)
 ;
 
 
