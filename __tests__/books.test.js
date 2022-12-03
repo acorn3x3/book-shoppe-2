@@ -16,21 +16,44 @@ describe('books routes', () => {
     const resp = await request(app).get('/books');
     expect(resp.status).toBe(200);
     expect(resp.body.length).toBe(2);
-    expect(resp.body[0]).toMatchInlineSnapshot(`
-      Object {
-        "authors": Array [
-          Object {
-            "dob": "1989",
-            "first_name": "Cornejo",
-            "id": 3,
-            "last_name": "Andrew",
-            "pob": "Oceanside",
-          },
-        ],
-        "id": "2",
-        "released": "1900",
-        "title": "Call of the Wild",
-      }
+    expect(resp.body).toMatchInlineSnapshot(`
+      Array [
+        Object {
+          "authors": Array [
+            Object {
+              "dob": "1989",
+              "first_name": "Andrew",
+              "id": 3,
+              "last_name": "Cornejo",
+              "pob": "Oceanside",
+            },
+          ],
+          "id": "2",
+          "released": "1900",
+          "title": "Call of the Wild",
+        },
+        Object {
+          "authors": Array [
+            Object {
+              "dob": "1989",
+              "first_name": "Rose",
+              "id": 1,
+              "last_name": "Moira",
+              "pob": "Springfield",
+            },
+            Object {
+              "dob": "1989",
+              "first_name": "Jude",
+              "id": 2,
+              "last_name": "Moira",
+              "pob": "Springfield",
+            },
+          ],
+          "id": "1",
+          "released": "1800",
+          "title": "Red Badge of Courage",
+        },
+      ]
     `);
   });
   it('GET /books/:id should return an individual book and their authors', async () => {
@@ -41,16 +64,16 @@ describe('books routes', () => {
         "authors": Array [
           Object {
             "dob": "1989",
-            "first_name": "Moira",
+            "first_name": "Rose",
             "id": 1,
-            "last_name": "Rose",
+            "last_name": "Moira",
             "pob": "Springfield",
           },
           Object {
             "dob": "1989",
-            "first_name": "Moira",
+            "first_name": "Jude",
             "id": 2,
-            "last_name": "Jude",
+            "last_name": "Moira",
             "pob": "Springfield",
           },
         ],

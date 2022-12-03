@@ -36,9 +36,9 @@ INSERT INTO authors (
     pob
 )
 VALUES 
-('Moira', 'Rose', 1989, 'Springfield'),
-('Moira', 'Jude', 1989, 'Springfield'),
-('Cornejo', 'Andrew', 1989, 'Oceanside');
+('Rose', 'Moira', 1989, 'Springfield'),
+('Jude', 'Moira', 1989, 'Springfield'),
+('Andrew', 'Cornejo', 1989, 'Oceanside');
 
 INSERT INTO books (
     title,
